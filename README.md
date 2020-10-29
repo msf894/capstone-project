@@ -24,10 +24,6 @@ With access to a vast amount of play-by-play data and stats, I wanted to add an 
 ![league_play_distribution](Images/league_play_distribution1.png)
 
 
-```python
-
-```
-
 ![play_distribution_by_score](Images/play_distribution_by_score1.png)
 
 ## Play-Calling Dashboard
@@ -52,7 +48,7 @@ I used a number of machine learning models that were designed to predict whether
 
 The main metric used to compare each model's performance was its overall accuracy and the recall for a pass play. The reason recall for a play was used is due to the fact that, on average, a pass play would yield more yards than a run play.
 
-![model_results_table](Images/model_results_table.png)
+![model_results_table](Images/model_results_table.PNG)
 
 XGBoost performed the best out of all the models tested in terms of overall accuracy and pass recall.
 
