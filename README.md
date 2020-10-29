@@ -34,11 +34,11 @@ With access to a vast amount of play-by-play data and stats, I wanted to add an 
 
 As part of this project, I wanted to create visualizations that would help identify trends and tendencies for each NFL team. Not only would I be able to show how a certain team has changed over the years, but I can highlight a team's performance and patterns for a particular season. For example, I can see how much a team may favor running on first down or at what point is it more expected that a team will throw depending on how late into the game it is.
 
-![nyj_trend](Images/nyj_trends.png)
+![nyj_trend](Images/nyj_trends.PNG)
 
 In addition to plotting trends and tendencies for each team, I also created heatmap visualizations highlighting where each team preferred to throw and run the ball against each opponent. These heatmaps are useful to show which sides of the field a team's offense preferred when going against a particular team. Since NFL teams generally plan and scheme their offense to counter defensive schemes, it helps to highlight potential weaknesses and methods of attack.
 
-![pass_run_heatmap](Images/pass_run_heatmaps.png)
+![pass_run_heatmap](Images/pass_run_heatmaps.PNG)
 
 # Predictive Modeling:
 
