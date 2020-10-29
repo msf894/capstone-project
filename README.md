@@ -1,88 +1,63 @@
-# Capstone Project Requirements
+# Analysis and Predictive Modeling for NFL Playcalling
 
-## Introduction
+One of the most legendary quotes in American Football belongs to coach Paul “Bear” Bryant who said "Defense wins championships." In the wake of phenomenal offensive talents such as Patrick Mahomes and Lamar Jackson, it's apparent that the league has shifted towards an offense-focused mindset. It's hard to argue with results, especially when they result in championships. Regardless, there is a reason why coaches and players spent hours upon hours reviewing film of their opponents. Film sessions are done to point out what type of plays offenses like to run and help better prepare the defense for your opponent. You might not be able to completely stop a player like Mahomes but if you can slow him down, you can put your team in a better position to win.
 
-In this lesson, we'll discuss the requirements for our **Capstone Project**!
+![mahomes](Images/mahomes.gif)
 
-## Objectives
+The purpose of this project was to analyze NFL offense tendencies and design a predictive model that could accurately predict whether a team is planning on passing or running the ball. By looking at play-by-play data from all NFL regular season games, I wanted to identify any trends in offense play-calling that have become prevalent in recent years. I also developed visualizations to help provide an in-depth look into which sides of the field an offense liked to attack when running or passing the ball. By learning a team's tendencies on offense, you can have your defense in a better situation to anticipate the play-call and make a stop or even force a turnover.
 
-You will be able to:
+# Data Information:
 
-* Describe all required aspects of the final project
-* Describe what constitutes a successful project
+The majority of the dataset used came from a dataset on Kaggle. This dataset contains play-by-play details for all regular season games going back to 2009. It contains various columns about each play, such as a description of the play, how many yards were gained on the play, and which players were involved. Supplemental information was taken from www.pro-football-reference.com and NFL Game Pass for video corroboration. The original dataset can be accessed through this link: https://www.kaggle.com/maxhorowitz/nflplaybyplay2009to2016
 
-## Introduction
+# Libraries Used in this Project:
 
-Congratulations on making it to the final project! It's been a long journey, but we can finally see the light at the end of the tunnel!
+* Pandas for data cleaning and data manipulation
+* Matplotlib and Seaborn for data visualizations
+* Sci-kit Learn for machine learning modeling
+* BeautifulSoup for data scraping
 
-![Actual Footage of you seeing the light at the end of the tunnel](/end-of-tunnel.gif)
+# Data Visualizations
 
-Now that you've learned everything we have to teach you, it's time to show off and flex your data science muscles with your own **_Capstone Project_**! This project will allow you to showcase everything you've learned as a data scientist to by completing a professional-level data science project of your choosing. This project will be significantly larger than any project you've completed so far, and will be the crown jewel of your portfolio. A strong capstone project is the single most important thing you can do to get the attention of potential employers, so be prepared to put as much effort into this project as possible - the results will be **_worth it!_**
+With access to a vast amount of play-by-play data and stats, I wanted to add an additional component to my project. I decided to put it towards creating visualizations that could show how the league and individual teams have changed over the years. There are certain notions about how football has evolved over the years that I wanted to look at, such as a common thought that the NFL has become a “pass-heavy” league. The reality is that the pass-run ratio has barely changed in recent years.
 
-![Your portfolio brings all the employers to your inbox](/milkshake.gif)
+![league_play_distribution](Images/league_play_distribution1.png)
 
-## Topic Requirements
 
-Your project should develop a data product or analysis related to a single topic. You are completely free to choose any topic that interests you, but keep in mind that you will need to complete this project end-to-end, including sourcing your own data. When choosing a topic, think through these questions:  
+```python
 
-* What would I be motivated to work on?
-* What data could I use?
-* How could an individual or organization use my product or findings?
-* What will I be able to accomplish in the time I have available?
-* What challenges do I foresee with this project?
+```
 
-## Technical Requirements
+![play_distribution_by_score](Images/play_distribution_by_score1.png)
 
-Your project must meet the following technical requirements:
+## Play-Calling Dashboard
 
-1. **_No Off-The-Shelf Datasets_**. This project is a chance for you to highlight your critical thinking and data sourcing skills by finding a good dataset to answer a useful question. You _can_ use a pre-existing dataset, but you should consider combining it with other datasets and/or engineering your own features. The goal is to showcase your ability to find and work with data, so just grabbing a squeaky-clean dataset is out of the question.
+As part of this project, I wanted to create visualizations that would help identify trends and tendencies for each NFL team. Not only would I be able to show how a certain team has changed over the years, but I can highlight a team's performance and patterns for a particular season. For example, I can see how much a team may favor running on first down or at what point is it more expected that a team will throw depending on how late into the game it is.
 
-2. **_Strong Data Exploration, with at least 4 relevant data visualizations._**  There are few skills that impress employers more than the ability to dive into a new dataset and produce engaging visualizations that communicate important information. For this project, anything worth knowing is worth visualizing. Level up your project by digging into more advanced visualization libraries like seaborn!
+![nyj_trend](Images/nyj_trends.png)
 
-3. **_Makes use of Supervised Learning_**. It is great to use **_Unsupervised Learning_** techniques as needed in your project (for instance, segmentation with clustering algorithms), but supervised learning should play a central role in answering your question. 
+In addition to plotting trends and tendencies for each team, I also created heatmap visualizations highlighting where each team preferred to throw and run the ball against each opponent. These heatmaps are useful to show which sides of the field a team's offense preferred when going against a particular team. Since NFL teams generally plan and scheme their offense to counter defensive schemes, it helps to highlight potential weaknesses and methods of attack.
 
-4. **_Explicitly makes use of a Data Science Process such as OSEMN or CRISP-DM_**. Select a Data Science Process to use to give structure to your project. Each step in the process should correspond to a section in your Jupyter Notebook.  
+![pass_run_heatmap](Images/pass_run_heatmaps.png)
 
-5. **_A well-defined goal with clearly presented results._** Your project should provide any background context needed to understand the project you are working on and why it's important. For instance, if you are trying to detect fault lines using Earthquake data, you should review the topic and your dataset so that the reader can understand your work.  Similarly, the results of your project should be clearly communicated. Do not just tell your audience the final accuracy of your models--be sure to answer "big picture" questions as well. For instance: Would you recommend shipping this model to production, or is more work needed? 
+# Predictive Modeling:
 
-**_NOTE:_** Inconclusive results are okay--from a purely scientific perspective, they are no more or less important or valuable than any other kinds of results. If your results are inconclusive, you should discuss what your next steps would be from there. For instance, what do you think it would take to get conclusive results--more data? Different data that was unavailable? Both? 
+I used a number of machine learning models that were designed to predict whether a play would be be a pass or run. Each of the models were provided with details that a defense would have previous to the play occurring, such as the score differential and the yards to go for a first down. The following models were used:
 
-## Requirements for Online Students Only
+* Logistic Regression
+* Decision Trees
+* Ensemble Methods with Decision Trees
+* Random Forests
+* XGBoost
 
-### Deliverables
+The main metric used to compare each model's performance was its overall accuracy and the recall for a pass play. The reason recall for a play was used is due to the fact that, on average, a pass play would yield more yards than a run play.
 
-For online students, the deliverables for this project consist of the following three components:
+![model_results_table](Images/model_results_table.png)
 
-1. A Jupyter notebook for a presentation.
-  * The Jupyter notebook will have two components:
-    1. An **_Abstract_** section that briefly explains your problem, your methodology, and your findings, and business recommendations as a result of your findings. This section should be 1-2 paragraphs long.  
-    2. The technical analysis for a data science audience. This detailed technical analysis should explicitly follow a Data Science Process as outlined in the previous section. It should be well-formatted and organized, and should contain all code, visualizations, and detailed explanations/analysis.
-    
-2. An organized **README.md** file in the GitHub repository containing your project code that describes the contents of the repository. This file should be the source of information for navigating through all the code in your repository. 
-    
-3. A blog post showcasing your project, with a focus on your methodology and findings. A well-written blog post about your project will probably be the first thing most recruiters and hiring managers see, so really take the time to polish up this blog post and explain your project, methodology, and findings/business recommendations in a clear, concise manner. This blog post should cover everything important about your project, but remember that your audience for this blog post will largely be non-technical. Your blog post should definitely contain visualizations, code snippets, and anything else you find important, but don't get bogged down trying to explain highly technical concepts. Your blog post should provide a link to the Github repository containing your actual project, for people that want to really dive into the technical aspects of your project.
-* Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging) for the technical requirements and blog ideas.
+XGBoost performed the best out of all the models tested in terms of overall accuracy and pass recall.
 
-### Rubric 
+![xgboost_results](Images/xgboost_results.png)
 
-Online students can find a PDF of the rubric for the final capstone project [here](/online_capstone_project_rubric.pdf). 
+# Future Work:
 
-## Requirements for On-Campus Students Only
-
-For on-campus students, your project will be evaluated based on the contents of your GitHub repo, which must contain the following three components:
-
-1. A Jupyter notebook     
-2. An **README.md** file 
-3. Presentation slides
-
-The requirements for these components are described in detail in the rubric for the final capstone project [here](https://docs.google.com/spreadsheets/d/1YUC5_QVu8BEd7xBJumzspH40-KuJtL9KQInQYXGi5bE/edit?usp=sharing). You can learn how your teacher will use the rubric to review the project [here](https://github.com/learn-co-curriculum/dsc-campus-capstone-project-review).
-
-## Example Student Project
-
-Take a look at this [technical report](https://github.com/paulinaczheng/twitter_flu_tracking) from a Flatiron student that used tweet data to predict the weekly number of flu cases during flu season. Pay attention to how well structured the project is, and how much she relies on great visualizations to tell her story for her. Your explanations don't have to be wordy - a visualization is worth a thousand words!
-
-## Summary
-
-The Capstone Project is the most critical part of the program. It gives you a chance to bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills.  Most importantly, it provides employers with strong signal about your technical abilities, and allow you to show the world what an amazing Data Scientist you've become!
-
-The projects are serious and important - they can be passed and they can be failed. Take the project seriously, put the time in, ask for help from your peers or instructors early and often if you need it, and treat the review as a job interview and you'll do great. We're rooting for you to succeed and we're only going to ask you to take a review again if we believe that you need to. We'll also provide open and honest feedback so you can improve as quickly and efficiently as possible.
+One of the most crucial components of a play not featured within this dataset was the personnel used on the play. As an example, certain personnel sets (ones with more TEs as blockers) are better suited for run plays. In addition, knowing who is on the field can provide valuable insights for what kind of play to suspect. I'd also like to incorporate playoff situations into the model. Towards the end of the season, teams that are fighting for a playoff spot will be more aggressive as they cannot afford to lose crucial games. Teams in need of a win will do what it takes to ensure they are in contention during the game. I would also like to do a web deployment where you can access the visualizations of play-calling trends and pass/run locations for each NFL team.
