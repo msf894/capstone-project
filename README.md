@@ -57,3 +57,5 @@ XGBoost performed the best out of all the models tested in terms of overall accu
 # Future Work:
 
 One of the most crucial components of a play not featured within this dataset was the personnel used on the play. As an example, certain personnel sets (ones with more TEs as blockers) are better suited for run plays. In addition, knowing who is on the field can provide valuable insights for what kind of play to suspect. I'd also like to incorporate playoff situations into the model. Towards the end of the season, teams that are fighting for a playoff spot will be more aggressive as they cannot afford to lose crucial games. Teams in need of a win will do what it takes to ensure they are in contention during the game. I would also like to do a web deployment where you can access the visualizations of play-calling trends and pass/run locations for each NFL team.
+
+Link to the Medium Blog for this project: https://medium.com/@msf894/analysis-and-predictive-modeling-for-play-calling-in-the-nfl-fb6976134a93
